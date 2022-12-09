@@ -1,3 +1,11 @@
-[center]![Logo Pdf2Html](./private/src/LogoV2.png)[center]
+<p align="center">
+  <a href="https://getbootstrap.com/">
+    <img src="./private/src/LogoV2.png" alt="Bootstrap logo" width="200" height="165">
+  </a>
+</p>
 
-[center]Réalisez vos documents PDF en un clin d'œil grâce à pdf2html ! Gagnez du temps et de l'efficacité avec notre librairie pdf2html ![center]
+<h3 align="center">Pdf 2 Html</h3>
+
+<p align="center">
+  Réalisez vos documents PDF en un clin d'œil grâce à pdf2html ! Gagnez du temps et de l'efficacité avec notre librairie pdf2html !
+</p>
