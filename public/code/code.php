@@ -59,6 +59,7 @@ $data1 = $database->read($query1);
             function onMouseMove(event) {
             moveAt(event.pageX, event.pageY)
             }
+       
             document.addEventListener("mousemove", onMouseMove);
             ball_'.$i.'.onmouseup = function () {
             document.removeEventListener("mousemove", onMouseMove);

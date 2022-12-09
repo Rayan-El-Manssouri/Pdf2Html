@@ -26,7 +26,7 @@ $data1 = $database->read($query1);
     <span class="texte_code" id="Code_2">Génération de Code</span>
     <span class="texte_deconnecter" id="deconnecter_2">Ce déconnecter</span>
     <div class="Importer_image" id="Image_sidebar">
-        <h1>Déposer votre image</h1>
+        <h1>Veuillez déposer votre photo ici.</h1>
         <form method="post" enctype="multipart/form-data">
             <label class="label" for="file">
                 Importer
