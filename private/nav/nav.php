@@ -20,7 +20,7 @@ $data1 = $database->read($query1);
         <li><a href=""><p><span class="material-symbols-outlined" style="position: var(--Position-Defaut); top: 850px;" id="deconnecter" onmouseover="deconnecter_2()">Logout</span> </p></a></li>
     </ul>
     <span class="Accueil" style="" id="Home_2">Acceuille</span>
-    <span class="Importer" id="Importer_2">Importer Des images</span>
+    <span class="Importer" id="Importer_2">Importer des images</span>
     <span class="texte_generation" id="|_|_2">Génration de |_|</span>
     <span class="texte_generation_text" id="Text_2">Text</span>
     <span class="texte_code" id="Code_2">Génération de Code</span>
