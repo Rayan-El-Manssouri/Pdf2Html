@@ -13,3 +13,26 @@
 ## Pdf 2 Html
 
 Bienvenue sur le README de pdf 2 html. Créé le 09/12/2022 à 23:50.
+
+## Dépendances
+
++ Php
++ Mysql
++ Apache
++ PhpMyAdmin
+
+## Pour commencer 
+
+Voici la liste dont vous avez besoin pour lancer le projet :
+
+- Clone the repo: `git clone https://github.com/Rayan-El-Manssouri/Pdf2Html.git`
+- Install wampp `https://www.wampserver.com/`
+- Install Lampp `https://www.youtube.com/watch?v=iscb52gO00M`
+
+## Installation du projet
+
+Pour pouvoir installer le projet ou l'utiliser, vous aurez besoin de toutes les dépendances. Ensuite, veuillez 
+
+importer dans l'interface de PhpMyAdmin le fichier pdf2html.sql qui se trouve dans le répertoire 'private/bdd/
+
+pdf2html.sql 
