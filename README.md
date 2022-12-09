@@ -36,3 +36,12 @@ Pour pouvoir installer le projet ou l'utiliser, vous aurez besoin de toutes les 
 importer dans l'interface de PhpMyAdmin le fichier pdf2html.sql qui se trouve dans le répertoire 'private/bdd/
 
 pdf2html.sql 
+
+## Nous contacter
+
+Contactez-nous :
+
+- Instagram : https://www.instagram.com/revis_la_jour_/
+- Gmail : `liviackerman69@gmail.com`
+- Snap : rayan_el_man
+- Tik Tok : `https://www.tiktok.com/@rayan_el_man`
