@@ -1,0 +1,1 @@
+![Logo Pdf2Html](./private/src/logo.png)
