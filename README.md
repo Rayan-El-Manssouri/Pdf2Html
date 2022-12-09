@@ -1,1 +1,1 @@
-![Logo Pdf2Html](./private/src/logo.png)
+![Logo Pdf2Html](./private/src/LogoV2.png)
