@@ -1,0 +1,299 @@
+/* Déclaration des variables. */
+:root{
+    /* Header icone */
+    --Text-Accueil: 35px;
+    --Text-Accueil-descente: 45px;
+    --Text-Import: 195px;
+    --Text-Import-descente: 205px;
+    --Text-Generation-Trait: 295px;
+    --Text-Generation-Trait-descente: 305px;
+    --Text-Generation-Text: 395px;
+    --Text-Generation-Text-descente: 405px;
+    --Text-Generation-Code: 495px;
+    --Text-Generation-Code-descente: 505px;
+    /* Attribut CSS répétif. */
+    --Color-blanc: #fff;
+    --Transition-header:  all 0.35s ease;
+    --Transition-header-ease-in-out: all 0.35s ease-in-out;
+    --Position-Defaut: absolute;
+}
+
+
+/* remise a defaut (Hashage)*/
+*{
+    transition: var(--Transition-header-ease-in-out);
+    cursor: default;
+}
+
+
+/* Header inspirer de canva site officiel : https://www.canva.com/ */
+ul{
+    position: fixed;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    background: var(--Color-blanc);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    width: 70px;
+    z-index: 1000000;
+    transition: var(--Transition-header);
+}
+nav ul li{
+    padding: 5px;
+    width: 100%;
+}
+nav ul li span{
+    text-align: center;
+}
+nav ul li p{
+    padding: 15px;
+}
+
+
+/* Icon google source : https://fonts.google.com/icons */
+.material-symbols-outlined{
+    border-radius: 20px;
+    padding: 10px;
+    position: var(--Position-Defaut);
+    left: 10px;
+    color: black;
+    transition: var(--Transition-header);
+    cursor: pointer;
+}
+.material-symbols-outlined:hover{
+    background-color: #333;
+    color: var(--Color-blanc);
+}
+
+/* Text de Acceuile. */
+.Accueil{
+    position: var(--Position-Defaut);
+    left: 60px;
+    color: #000;
+    top: var(--Text-Accueil);
+    z-index: 1000000000;
+    opacity: 0;
+}
+.Accueil_2{
+    display: inline-block;
+    background-color: #000;
+    z-index: 1000;
+    left: 60px;
+    position: var(--Position-Defaut);
+    color: var(--Color-blanc);
+    z-index: 1000000000;
+    padding: 10px;
+    border-radius: 10px;
+    top: var(--Text-Accueil-descente);
+    opacity: 1;
+}
+
+
+/* Text Importer image. */
+.Importer{
+    position: var(--Position-Defaut);
+    left: 60px;
+    top: var(--Text-Import);
+    opacity: 0;
+    z-index: 1000000000;
+
+}
+.Importer_2{
+    display: inline-block;
+    background-color: #000;
+    z-index: 1000000000;
+    left: 60px;
+    position: var(--Position-Defaut);
+    color: var(--Color-blanc);
+    z-index: 100000;
+    padding: 10px;
+    border-radius: 10px;
+    top: var(--Text-Import-descente);
+    opacity: 1;
+}
+
+
+/* Text pour copier coller des |_| */
+.texte_generation{
+    position: var(--Position-Defaut);
+    left: 60px;
+    top: var(--Text-Generation-Trait);
+    opacity: 0;
+    z-index: 1000000000;
+
+}
+.text_overflow_generation{
+    display: inline-block;
+    background-color: #000;
+    z-index: 1000000000;
+    left: 60px;
+    position: var(--Position-Defaut);
+    color: var(--Color-blanc);
+    z-index: 100000;
+    padding: 10px;
+    border-radius: 10px;
+    top: var(--Text-Generation-Trait-descente);
+    opacity: 1;
+}
+
+
+
+/* Parti CSS pour générer du text */
+.texte_generation_text{
+    position: var(--Position-Defaut);
+    left: 60px;
+    top: var(--Text-Generation-Text);
+    opacity: 0;
+    z-index: 1000000000;
+
+}
+.Text_2_classe{
+    display: inline-block;
+    background-color: #000;
+    z-index: 1000000000;
+    left: 60px;
+    position: var(--Position-Defaut);
+    color: var(--Color-blanc);
+    z-index: 100000;
+    padding: 10px;
+    border-radius: 10px;
+    top: var(--Text-Generation-Text-descente);
+    opacity: 1;
+}
+
+
+
+/* Text pour génere le code. */
+.texte_code{
+    position: var(--Position-Defaut);
+    left: 60px;
+    top: var(--Text-Generation-Code);
+    opacity: 0;
+    z-index: 1000;
+}
+.Code_2_classe{
+    display: inline-block;
+    background-color: #000;
+    z-index: 1000;
+    left: 60px;
+    position: var(--Position-Defaut);
+    color: var(--Color-blanc);
+    z-index: 100000;
+    padding: 10px;
+    border-radius: 10px;
+    top: var(--Text-Generation-Code-descente);
+    opacity: 1;
+}
+
+/* Text pour ce déconnecter. */
+.texte_deconnecter{
+    position: var(--Position-Defaut);
+    left: 60px;
+    top: 840px;
+    opacity: 0;
+    z-index: 1000;
+
+}
+.texte_deconnecter_2{
+    display: inline-block;
+    background-color: #000;
+    z-index: 1000;
+    left: 60px;
+    position: var(--Position-Defaut);
+    color: var(--Color-blanc);
+    z-index: 100000;
+    padding: 10px;
+    border-radius: 10px;
+    top: 850px;
+    opacity: 1;
+}
+
+
+/* Header Image Importer*/
+.Importer_image{
+    position: fixed;
+    height: 100%;
+    left: 70px;
+    top: 0;
+    background-color: var(--Color-blanc);
+    padding: 10px;
+    text-align: center;
+    width: 340px;
+    opacity: 0;
+    transition: all .2s ease;
+    display: flex;
+    
+}
+.Importer_image_2{
+    opacity: 1;
+    z-index: 10000;
+}
+input[type="file"]{
+    display: none;
+}
+.label{
+    background-color: #333;
+    padding: 10px;
+    color: #fff;
+    border-radius: 10px;
+    position: absolute;
+    top: 90px;
+    left: 120px;
+    width: 100px;
+    z-index: 10000000;
+
+}
+.label:hover{
+    background-color: rgb(93, 93, 93);
+    cursor: pointer;
+
+}
+.Importer_image h1{
+    color: #333;
+    position: absolute;
+    top: 50px;
+    text-align: center;
+    left: 50px;
+}
+.separation{
+    border-bottom: 1px solid #333;
+    position: relative;
+    top: 130px;
+    left: 10px;
+    width: 100%;
+}
+.Image_responsive{
+    position: relative;
+    top: 20px;
+    left: -120px;
+
+}
+.element_flex{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    height: 450px;
+    top: 140px;
+    left: 140px;
+}
+.Image_grid{
+    position: relative;
+    top: 120px;
+    grid-template-columns: 300px;
+    grid-column-gap: 30px;
+    display: grid;
+}
+.Image_grid img{
+    padding: 20px;
+    width: 200px;
+    position: relative;
+    left: 50px;
+    top: -125px;
+}
+.Border_span_importer_image{
+    transition: all 0.35s ease;
+    border: 1px solid black;
+}

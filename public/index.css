@@ -1,0 +1,27 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    border: none;
+}
+
+body{
+    background-color: #dfe9f5;
+}
+
+
+iframe{
+    border: 1px solid #333;
+    position: relative;
+    left: 650px;
+    width: 992px;
+    overflow-y: hidden;
+    height: 1403px;  
+    top: 100px;  
+    background-color: #dfe9f5;
+    overflow: hidden;
+}
+

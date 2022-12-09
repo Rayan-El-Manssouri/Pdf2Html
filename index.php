@@ -1,0 +1,10 @@
+<?php 
+
+header("Location: public/")
+
+
+?>
+
+
+
+
