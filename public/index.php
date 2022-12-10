@@ -7,13 +7,7 @@
 *////////////////////////////////
 ?>
 
-<?php 
-require_once '../private/bdd/connect.php';
-$database = new Database();
-error_reporting(0);
-$query1 = "SELECT * FROM image";
-$data1 = $database->read($query1);
-?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -29,5 +23,11 @@ $data1 = $database->read($query1);
 <body>
     <?php require_once '../private/nav/nav.php' ?>
     <iframe src="code/code.php" scrolling="no" crossorigin="anonymous" draggable="false"></iframe>
+    <script>
+        var ball_150 = document.getElementById('150');
+        ball_150.click(){
+          console.log("test")
+        }
+    </script>
 </body>
 </html>

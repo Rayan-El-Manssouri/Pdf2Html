@@ -12,12 +12,12 @@ $data1 = $database->read($query1);
 
 <nav class="logo">
     <ul>
-        <li><a href="http://localhost/Pdf2Html/public/index.php"><p><span class="material-symbols-outlined" id="Home" onmouseover="nav_recul_Text()" style="position: var(--Position-Defaut); top: 40px;">Home</span></p></a></li><li><a href=""><p>
-        <li><a ><p><span class="material-symbols-outlined" id="Importer" onmouseover="Importer()" onclick="Importer_image_2()"  style="position: var(--Position-Defaut); top: 200px;">add_photo_alternate</span> </p></a></li><li><a href=""><p>
-        <span class="material-symbols-outlined" onmouseover="Generation()" id="|_|" style="position: var(--Position-Defaut); top: 300px;">border_color</span> </p></a></li>
-        <li><a href=""><p><span class="material-symbols-outlined" id="Text" onmouseover="Text()" style="position: var(--Position-Defaut); top: 400px;">edit_note</span> </p></a></li>
-        <li><a href=""><p><span class="material-symbols-outlined" id="Code" onmouseover="Code()" style="position: var(--Position-Defaut); top: 500px;">code</span> </p></a></li>
-        <li><a href=""><p><span class="material-symbols-outlined" style="position: var(--Position-Defaut); top: 850px;" id="deconnecter" onmouseover="deconnecter_2()">Logout</span> </p></a></li>
+        <li><a href="http://localhost/Pdf2Html/public/index.php"><p><span class="material-symbols-outlined" id="Home" onmouseover="nav_recul_Text()" style="position: absolute; top: 40px;">Home</span></p></a></li>
+        <li><a ><p><span class="material-symbols-outlined" id="Importer" onmouseover="Importer()" onclick="Importer_image_2()"  style="position: absolute; top: 200px;">add_photo_alternate</span> </p></a></li><li><a href=""><p>
+        <span class="material-symbols-outlined" onmouseover="Generation()" id="|_|" style="position: absolute; top: 300px;">border_color</span> </p></a></li>
+        <li><a href=""><p><span class="material-symbols-outlined" id="Text" onmouseover="Text()" style="position: absolute; top: 400px;">edit_note</span> </p></a></li>
+        <li><a href=""><p><span class="material-symbols-outlined" id="Code" onmouseover="Code()" style="position: absolute; top: 500px;">code</span> </p></a></li>
+        <li><a href=""><p><span class="material-symbols-outlined" style="position: absolute; top: 850px;" id="deconnecter" onmouseover="deconnecter_2()">Logout</span> </p></a></li>
     </ul>
     <span class="Accueil" style="" id="Home_2">Acceuille</span>
     <span class="Importer" id="Importer_2">Importer des images</span>

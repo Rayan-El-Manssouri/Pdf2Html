@@ -1,4 +1,5 @@
 <?php 
+
 class FileManager
 {
     public function putContents($filePath, $Id)
@@ -106,11 +107,12 @@ class FileManager
         }
         )
         });";
-        $FileManager = new FileManager();
+
         /*
           La fonction file_put_contents() de PHP permet de créer un fichier en écrivant des données dans ce fichier. 
           Pour plus d'informations, vous pouvez consulter la documentation en ligne à l'adresse suivante : https://www.php.net/manual/en/function.file-put-contents.php.
         */
+        
         file_put_contents($filePath,$contenue);
     }
 }

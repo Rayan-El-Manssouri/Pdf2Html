@@ -1,14 +1,21 @@
 <?php 
+
 // Paramètres de connexion à la base de données
 $host = "localhost";
+
 $dbname = "pdf2html";
+
 $username = "root2";
+
 $password = "Rayan.200";
+
 // Création d'une instance de l'objet PDO pour se connecter à la base de données
 $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+
 // Classe pour gérer les requêtes SQL pour Pdf2Html
 class Pdf2HtmlQueryManager {
-    // La connexion PDO à la base de données
+
+  // La connexion PDO à la base de données
     private $pdo;
 
     // Constructeur prenant en paramètre la connexion PDO
