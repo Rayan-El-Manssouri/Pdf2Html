@@ -41,7 +41,4 @@ pdf2html.sql
 
 Contactez-nous :
 
-- Instagram : `https://www.instagram.com/revis_la_jour_/`
 - Gmail : `liviackerman69@gmail.com`
-- Snap : rayan_el_man
-- Tik Tok : `https://www.tiktok.com/@rayan_el_man`
