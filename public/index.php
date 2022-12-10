@@ -5,6 +5,7 @@
 // Création du projet : 19/11/2022 12:41
 //
 *////////////////////////////////
+
 ?>
 
 
@@ -22,12 +23,6 @@
 </head>
 <body>
     <?php require_once '../private/nav/nav.php' ?>
-    <iframe src="code/code.php" scrolling="no" crossorigin="anonymous" draggable="false"></iframe>
-    <script>
-        var ball_150 = document.getElementById('150');
-        ball_150.click(){
-          console.log("test")
-        }
-    </script>
+    <iframe src="Code/code.php" frameborder="0"></iframe>
 </body>
 </html>
