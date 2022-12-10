@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="">
+  <a href="https://github.com/Rayan-El-Manssouri/Pdf2Html#readme">
     <img src="./private/src/LogoV2.png" alt="Bootstrap logo" width="200" height="165">
   </a>
 </p>
