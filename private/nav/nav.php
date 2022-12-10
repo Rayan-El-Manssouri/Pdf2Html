@@ -35,13 +35,11 @@ $data1 = $database->read($query1);
             <div class="separation"></div>
         </form>
         <div class="Image_responsive">
-            <div class="element_flex">
                 <div class="Image_grid">
                     <?php foreach($data1 as $dataV2): ?>
-                        <img class="image" src="<?=$dataV2['src']?>">
+                        <img class="image image_grid" src="<?=$dataV2['src']?>">
                     <?php endforeach; ?>
                 </div>
-            </div>
         </div>
         <?php 
         if(!empty($_FILES)){

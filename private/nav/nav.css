@@ -221,14 +221,16 @@ nav ul li p{
     width: 340px;
     opacity: 0;
     transition: all .2s ease;
-    display: flex;
-    
+    display: flex;   
 }
+
+/* Classe donné en javascript afin de voir la div */
 .Importer_image_2{
     opacity: 1;
     z-index: 10000;
 }
 
+/* Custom labal Importer*/
 input[type="file"]{
     display: none;
 }
@@ -248,8 +250,9 @@ input[type="file"]{
 .label:hover{
     background-color: rgb(93, 93, 93);
     cursor: pointer;
-
 }
+
+/* Titre  */
 .Importer_image h1{
     color: #333;
     position: absolute;
@@ -257,44 +260,33 @@ input[type="file"]{
     text-align: center;
     left: 20px;
 }
-.separation{
-    border-bottom: 1px solid #333;
-    position: relative;
-    top: 130px;
-    left: 10px;
-    width: 100%;
-}
+
+
 .Image_responsive{
     position: relative;
-    top: 20px;
-    left: -120px;
-
-}
-.element_flex{
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    scrollbar-width: thin;
-    height: 450px;
     top: 140px;
-    left: 140px;
-}
-.Image_grid{
-    position: relative;
-    top: 120px;
-    grid-template-columns: 300px;
-    grid-column-gap: 30px;
+    width: 100%;
+    height: auto;
+    margin: 30px auto;
+    border: 1px solid #333;
     display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    grid-gap: 20px;
 }
+
+
+.image_grid{
+    width: 300px;
+    height: 200px;
+}
+
 .Image_grid img{
-    padding: 20px;
     width: 200px;
     position: relative;
-    left: 50px;
-    top: -125px;
+    border: 1px solid #333;
 }
+
+
 .Border_span_importer_image{
     transition: all 0.35s ease;
     border: 1px solid black;
