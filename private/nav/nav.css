@@ -16,6 +16,13 @@
     --Transition-header:  all 0.35s ease;
     --Transition-header-ease-in-out: all 0.35s ease-in-out;
     --Position-Defaut: absolute;
+    /* Zindex - niveaux */
+    --Zindex-1: 1;
+    --Zindex-2: 2;
+    --Zindex-3: 3;
+    --Zindex-4: 4;
+    --Zindex-5: 5;
+    --Zindex-6: 6;
 }
 
 
@@ -35,7 +42,7 @@ ul{
     background: var(--Color-blanc);
     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
     width: 70px;
-    z-index: 1000000;
+    z-index: var(--Zindex-5);
     transition: var(--Transition-header);
 }
 nav ul li{
@@ -71,7 +78,7 @@ nav ul li p{
     left: 60px;
     color: #000;
     top: var(--Text-Accueil);
-    z-index: 1000000000;
+    z-index:var(--Zindex-5);
     opacity: 0;
 }
 .Accueil_2{
@@ -81,7 +88,7 @@ nav ul li p{
     left: 60px;
     position: var(--Position-Defaut);
     color: var(--Color-blanc);
-    z-index: 1000000000;
+    z-index:var(--Zindex-5);
     padding: 10px;
     border-radius: 10px;
     top: var(--Text-Accueil-descente);
@@ -95,13 +102,13 @@ nav ul li p{
     left: 60px;
     top: var(--Text-Import);
     opacity: 0;
-    z-index: 1000000000;
+    z-index: var(--Zindex-5);
 
 }
 .Importer_2{
     display: inline-block;
     background-color: #000;
-    z-index: 1000000000;
+    z-index: var(--Zindex-5);
     left: 60px;
     position: var(--Position-Defaut);
     color: var(--Color-blanc);
@@ -119,13 +126,13 @@ nav ul li p{
     left: 60px;
     top: var(--Text-Generation-Trait);
     opacity: 0;
-    z-index: 1000000000;
+    z-index: var(--Zindex-5);
 
 }
 .text_overflow_generation{
     display: inline-block;
     background-color: #000;
-    z-index: 1000000000;
+    z-index: var(--Zindex-5);
     left: 60px;
     position: var(--Position-Defaut);
     color: var(--Color-blanc);
@@ -144,17 +151,16 @@ nav ul li p{
     left: 60px;
     top: var(--Text-Generation-Text);
     opacity: 0;
-    z-index: 1000000000;
+    z-index: var(--Zindex-5);
 
 }
 .Text_2_classe{
     display: inline-block;
     background-color: #000;
-    z-index: 1000000000;
+    z-index: var(--Zindex-5);
     left: 60px;
     position: var(--Position-Defaut);
     color: var(--Color-blanc);
-    z-index: 100000;
     padding: 10px;
     border-radius: 10px;
     top: var(--Text-Generation-Text-descente);
@@ -169,7 +175,7 @@ nav ul li p{
     left: 60px;
     top: var(--Text-Generation-Code);
     opacity: 0;
-    z-index: 1000;
+    z-index: var(--Zindex-5);
 }
 .Code_2_classe{
     display: inline-block;
@@ -178,7 +184,7 @@ nav ul li p{
     left: 60px;
     position: var(--Position-Defaut);
     color: var(--Color-blanc);
-    z-index: 100000;
+    z-index: var(--Zindex-5);
     padding: 10px;
     border-radius: 10px;
     top: var(--Text-Generation-Code-descente);
@@ -191,13 +197,13 @@ nav ul li p{
     left: 60px;
     top: 840px;
     opacity: 0;
-    z-index: 1000;
+    z-index: var(--Zindex-5);
 
 }
 .texte_deconnecter_2{
     display: inline-block;
     background-color: #000;
-    z-index: 1000;
+    z-index: var(--Zindex-5);
     left: 60px;
     position: var(--Position-Defaut);
     color: var(--Color-blanc);
@@ -278,6 +284,7 @@ input[type="file"]{
   top: 130px;
   position: relative;
   left: 5px;
+  z-index: var(--Zindex-6);
   scrollbar-width: thin;
 }
 
@@ -288,7 +295,9 @@ input[type="file"]{
     grid-template-rows: repeat(2, 5vw);
     gap: 15px 15px;
     position: relative;
-    left: -10px;
+    left: -5px;
+    z-index: var(--Zindex-6);
+
 }
 
 .Image_grid img{
@@ -296,4 +305,6 @@ input[type="file"]{
     width: 100%;
     height: 100%;
     border: 1px solid #333;
+    z-index: var(--Zindex-6);
+
 }
