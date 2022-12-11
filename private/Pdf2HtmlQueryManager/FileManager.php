@@ -10,7 +10,6 @@ class FileManager
         ball_$i.style.left =  localStorage.getItem('IamgeLeft_$i') ;
         ball_$i.style.top = localStorage.getItem('IamgeTop_$i');
         ball_$i.onmousedown = function(event) {
-            ball_$i.style.cursor = 'move';
             let shiftX = event.clientX - ball_$i.getBoundingClientRect().left;
             let shiftY = event.clientY - ball_$i.getBoundingClientRect().top;
             ball_$i.style.zIndex = 1000;
@@ -25,6 +24,7 @@ class FileManager
               localStorage.setItem('IamgeTop_$i', ball_$i.style.top);
             }  
             function onMouseMove(event) {
+              ball_$i.style.cursor = 'move';
               moveAt(event.pageX, event.pageY);
             }
             // déplace la balle à l’évènement mousemove

@@ -217,7 +217,6 @@ nav ul li p{
     top: 0;
     background-color: var(--Color-blanc);
     padding: 10px;
-    text-align: center;
     width: 340px;
     opacity: 0;
     transition: all .2s ease;
@@ -241,53 +240,60 @@ input[type="file"]{
     color: #fff;
     border-radius: 10px;
     position: absolute;
-    top: 120px;
+    top: 90px;
+    text-align: center;
     left: 120px;
     width: 100px;
     z-index: 10000000;
-
 }
+
+
 .label:hover{
     background-color: rgb(93, 93, 93);
     cursor: pointer;
-}
-
-/* Titre  */
-.Importer_image h1{
-    color: #333;
-    position: absolute;
-    top: 50px;
-    text-align: center;
-    left: 20px;
-}
-
-
-.Image_responsive{
-    position: relative;
-    top: 140px;
-    width: 100%;
-    height: auto;
-    margin: 30px auto;
-    border: 1px solid #333;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 200px);
-    grid-gap: 20px;
-}
-
-
-.image_grid{
-    width: 300px;
-    height: 200px;
-}
-
-.Image_grid img{
-    width: 200px;
-    position: relative;
-    border: 1px solid #333;
 }
 
 
 .Border_span_importer_image{
     transition: all 0.35s ease;
     border: 1px solid black;
+}
+
+
+/* Titre  */
+.Importer_image h1{
+    color: #333;
+    position: var(--Position-Defaut);
+    top: 30px;
+    text-align: center;
+    left: 20px;
+    position: absolute;
+}
+
+
+.scrollbar{
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  top: 130px;
+  position: relative;
+  left: 5px;
+  scrollbar-width: thin;
+}
+
+
+.Image_grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 5vw);
+    gap: 15px 15px;
+    position: relative;
+    left: -10px;
+}
+
+.Image_grid img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #333;
 }
