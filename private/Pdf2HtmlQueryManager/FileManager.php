@@ -9,6 +9,25 @@ class FileManager
         var ball_$i = document.getElementById('$i')
         ball_$i.style.left =  localStorage.getItem('IamgeLeft_$i') ;
         ball_$i.style.top = localStorage.getItem('IamgeTop_$i');
+     
+        ball_$i.addEventListener('contextmenu', (e)=>{
+          var menu_click_droit_id_$i = document.getElementById('menu_click_droit_id_$i')
+         e.preventDefault();
+         menu_click_droit_id_$i.style.display = 'block';
+         menu_click_droit_id_$i.style.position = 'absolute';
+         menu_click_droit_id_$i.style.top = e.clientY + 'px';
+         menu_click_droit_id_$i.style.left = e.clientX + 'px';
+         menu_click_droit_id_$i.addEventListener('contextmenu', (e) => {
+          e.preventDefault();
+         })
+       })
+
+     
+
+
+       document.addEventListener('click', () => {
+        menu_click_droit_id_$i.style.display = 'none';
+       })
         ball_$i.onmousedown = function(event) {
             let shiftX = event.clientX - ball_$i.getBoundingClientRect().left;
             let shiftY = event.clientY - ball_$i.getBoundingClientRect().top;

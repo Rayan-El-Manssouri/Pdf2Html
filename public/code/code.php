@@ -37,7 +37,7 @@ $manager = new FileManager();
               $i = $Pdf2HtmlQueryManager_Image_V2['Id']; 
             ?>
             <div class="image" id="<?= $Pdf2HtmlQueryManager_Image_V2['Id']?>" >
-                <img src="../<?= $Pdf2HtmlQueryManager_Image_V2['src']?>"    class="img ball_<?=$i?>"   width="80" height="80"   >
+                <img src="../<?= $Pdf2HtmlQueryManager_Image_V2['src']?>" style="z-index: 1; position: absolute;"    class="img ball_<?=$i?>"   width="80" height="80"   >
                 <?php 
                   // Création d'un répertoire javascript qui va sctocker tous le code des images / text indépedent.
                   mkdir("javascript");
@@ -45,6 +45,26 @@ $manager = new FileManager();
                   echo "<script src='javascript/image_$i.js'></script>";
                 ?>
             </div>
+            <div class="menu_click_droit" id="menu_click_droit_id_<?=$i?>">
+            <form method="POST">
+              <input type="submit" value="Supprimmer" name="supp"></input>
+            </form>
+            </div>
         <?php endforeach ?>
+
+        <?php 
+              if(isset($_POST['supp'])){
+                  require_once '../../private/bdd/connect.php';
+                  $database = new Database();
+                  $query3 = "SELECT * FROM `image` WHERE Id=".$i." ";
+                  $data3 = $database->read($query3);
+                  $src = $data3[0]['src'];
+                  unlink("../$src");
+                  unlink("./javascript/image_$i.js");
+                  $query2 = "DELETE FROM `image`WHERE Id=".$i." ";
+                  $data2 = $database->read($query2);
+                  header("Location: code.php");
+                }
+             ?>
 </body>
 </html>

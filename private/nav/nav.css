@@ -296,7 +296,6 @@ input[type="file"]{
     gap: 15px 15px;
     position: relative;
     left: -5px;
-    z-index: var(--Zindex-6);
 
 }
 
