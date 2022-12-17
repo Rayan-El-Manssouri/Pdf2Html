@@ -47,7 +47,8 @@ $data1 = $database->read($query1);
             $file_name = $_FILES['fichier']['name'];
             $file_type = $_FILES['fichier']['type'];
             $file_tmp_name = $_FILES['fichier']['tmp_name'];
-            $file_dest = 'src/' .$file_name;
+            $time = time();
+            $file_dest = 'src/' .$time .$file_name;
             $query = "INSERT INTO `image`(`src`) VALUES ('$file_dest')";
             $data = $database->read($query);
             if(move_uploaded_file($file_tmp_name, $file_dest)){
