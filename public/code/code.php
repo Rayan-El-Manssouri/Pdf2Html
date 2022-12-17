@@ -52,6 +52,8 @@ $manager = new FileManager();
             </div>
         <?php endforeach ?>
 
+      
+
         <?php 
               if(isset($_POST['supp'])){
                   require_once '../../private/bdd/connect.php';
@@ -59,7 +61,6 @@ $manager = new FileManager();
                   $query3 = "SELECT * FROM `image` WHERE Id=".$i." ";
                   $data3 = $database->read($query3);
                   $src = $data3[0]['src'];
-                  unlink("../$src");
                   unlink("./javascript/image_$i.js");
                   $query2 = "DELETE FROM `image`WHERE Id=".$i." ";
                   $data2 = $database->read($query2);

@@ -6,8 +6,9 @@
 require_once '../private/bdd/connect.php';
 $database = new Database();
 error_reporting(0);
-$query1 = "SELECT * FROM image";
-$data1 = $database->read($query1);
+
+$query4 = "SELECT * FROM image_stockage";
+$data5 = $database->read($query4);
 ?>
 
 <nav class="logo">
@@ -36,10 +37,28 @@ $data1 = $database->read($query1);
         </form>
         <div class="scrollbar">
             <div class="Image_grid">
-                <?php foreach($data1 as $dataV2): ?>
-                    <img class="image image_grid" src="<?=$dataV2['src']?>">
+                <?php foreach($data5 as $dataV2): ?>
+                    <img class="image image_grid" src="<?=$dataV2['src']?>" onclick="generate_<?=$dataV2['Id']?>()" >
+                    <form method="POST">
+                        <input type="submit" name="generate"  id="generation_<?=$dataV2['Id']?>" >
+                    </form>
                 <?php endforeach; ?>
+             
+                <?php 
+                if(isset($_POST['generate'])){
+                    $query6 = "INSERT INTO `image`(`src`) VALUES ('".$dataV2['src']."')";
+                    $data6 = $database->read($query6);
+                    header("Location: index.php");
+                }
+                ?>
+                   <script type="text/javascript">
+                    function generate_<?=$dataV2['Id']?>(){
+                        const generation_<?=$dataV2['Id']?> = generation_<?=$dataV2['Id']?>.document.getElementById("generation_<?=$dataV2['Id']?>");
+                        generation_<?=$dataV2['Id']?>.click();
+                    }
+                </script>
             </div>
+          
         </div>
         <?php 
         if(!empty($_FILES)){
@@ -49,11 +68,16 @@ $data1 = $database->read($query1);
             $file_tmp_name = $_FILES['fichier']['tmp_name'];
             $time = time();
             $file_dest = 'src/' .$time .$file_name;
-            $query = "INSERT INTO `image`(`src`) VALUES ('$file_dest')";
-            $data = $database->read($query);
-            if(move_uploaded_file($file_tmp_name, $file_dest)){
+            if(move_uploaded_file($file_tmp_name, $file_dest )){
+                $query = "INSERT INTO `image_stockage`(`src`) VALUES ('$file_dest')";
+                $data2 = $database->read($query);
                 $query2 = "SELECT MAX(Id) as id FROM image";
                 $data2 = $database->read($query2);
+                ?>
+                <script>
+                    alert("ok")
+                </script>
+                <?php
                 header("Location: index.php");
             }
             header("Location: index.php");
