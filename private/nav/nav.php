@@ -39,17 +39,21 @@ $data5 = $database->read($query4);
             <div class="Image_grid">
                 <?php foreach($data5 as $dataV2): ?>
                     <img class="image image_grid" src="<?=$dataV2['src']?>" onclick="generate_<?=$dataV2['Id']?>()" >
-                    <form method="POST">
-                        <input type="submit" name="generate"  id="generation_<?=$dataV2['Id']?>" >
+                    <form method="POST" class="formulaire_generate">
+                        <input type="submit" name="generate"   id="generation_<?=$dataV2['Id']?>" >
                     </form>
                 <?php endforeach; ?>
              
                 <?php 
-                if(isset($_POST['generate'])){
-                    $query6 = "INSERT INTO `image`(`src`) VALUES ('".$dataV2['src']."')";
-                    $data6 = $database->read($query6);
-                    header("Location: index.php");
-                }
+                    if(isset($_POST['generate'])){
+                        $query6 = "INSERT INTO `image`(`src`) VALUES ('".$dataV2['src']."')";
+                        $data6 = $database->read($query6);
+                        ?>
+                        <script>
+                            location.replace("")
+                        </script>
+                        <?php
+                    }
                 ?>
                    <script type="text/javascript">
                     function generate_<?=$dataV2['Id']?>(){

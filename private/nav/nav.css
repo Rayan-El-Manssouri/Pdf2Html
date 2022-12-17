@@ -307,6 +307,11 @@ input[type="file"]{
 
 }
 
+.formulaire_generate{
+    position: absolute;
+    z-index: 10000;
+    left: 100px;
+}
 
 
 /* Responsive */

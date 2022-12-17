@@ -48,24 +48,25 @@ $manager = new FileManager();
             <div class="menu_click_droit" id="menu_click_droit_id_<?=$i?>">
             <form method="POST">
               <input type="submit" value="Supprimmer" name="supp"></input>
+              <input type="hidden" id="cacher_<?=$i?>" name="test" value="<?=$i?>">
+
             </form>
             </div>
         <?php endforeach ?>
-
-      
-
-        <?php 
-              if(isset($_POST['supp'])){
+            <?php 
+              if(!empty($_POST['supp'])){
                   require_once '../../private/bdd/connect.php';
                   $database = new Database();
-                  $query3 = "SELECT * FROM `image` WHERE Id=".$i." ";
+                  $query3 = "SELECT * FROM `image` WHERE Id=".$_POST['test']."";
                   $data3 = $database->read($query3);
                   $src = $data3[0]['src'];
-                  unlink("./javascript/image_$i.js");
-                  $query2 = "DELETE FROM `image`WHERE Id=".$i." ";
+                  $i2 = $_POST['test'];
+                  unlink("./javascript/image_$i2.js");
+                  $query2 = "DELETE FROM `image`WHERE Id=".$i2." ";
                   $data2 = $database->read($query2);
                   header("Location: code.php");
                 }
              ?>
+      
 </body>
 </html>
