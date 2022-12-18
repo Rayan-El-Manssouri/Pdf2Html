@@ -40,14 +40,16 @@ $data5 = $database->read($query4);
                 <?php foreach($data5 as $dataV2): ?>
                     <?php 
                        $i = $dataV2['Id']; 
+                       $src = $dataV2['src']; 
 
                     ?>
                     <img class="image image_grid" id="img_2_<?=$i?>" src="<?=$dataV2['src']?>"  >
                     <form method="POST" class="formulaire_generate"  id="clickdroit_2_<?=$i?>">
                         <div class="clickdroit_2">
                             <input type="submit" value="Importer" name="generate"   id="generation_<?=$dataV2['Id']?>" >
-                            <input type="submit" value="Suprimmer" name="generate">
-
+                            <input type="submit" value="Suprimmer" name="supprimer">
+                            <input type="hidden" value="<?=$i?>" name="hidden_id">
+                            <input type="hidden" value="<?=$src?>" name="hidden_src">
                         </div>
                     </form>
                     <script type="text/javascript">
@@ -67,10 +69,11 @@ $data5 = $database->read($query4);
                             })
                         </script>
                 <?php endforeach; ?>
-             
                 <?php 
                     if(isset($_POST['generate'])){
-                        $query6 = "INSERT INTO `image`(`src`) VALUES ('".$dataV2['src']."')";
+                        $query7 = "SELECT * FROM `image_stockage` WHERE Id='".$_POST['hidden_id']."' ";
+                        $data7 = $database->read($query7);
+                        $query6 = "INSERT INTO `image`(`src`) VALUES ('".$data7[0]['src']."')";
                         $data6 = $database->read($query6);
                         ?>
                         <script>
@@ -86,7 +89,6 @@ $data5 = $database->read($query4);
                     }
                 </script>
             </div>
-          
         </div>
         <?php 
         if(!empty($_FILES)){
@@ -103,13 +105,29 @@ $data5 = $database->read($query4);
                 $data2 = $database->read($query2);
                 ?>
                 <script>
-                    alert("ok")
+                    location.replace("")
                 </script>
                 <?php
-                header("Location: index.php");
             }
-            header("Location: index.php");
         };
+
+        if(!empty($_POST['supprimer'])){
+            $query8 = "SELECT * FROM  `image_stockage` WHERE Id='".$_POST['hidden_id']."' ";
+            $data8 = $database->read($query8);
+
+            $src = $data8[0]['src'];
+            unlink($src);
+            $query7 = "DELETE FROM `image_stockage` WHERE Id='".$_POST['hidden_id']."' ";
+            $data7 = $database->read($query7);
+            $query10 = "DELETE FROM `image` WHERE src='".$_POST['hidden_src']."' ";
+            $data10 = $database->read($query10);
+
+            ?>
+            <script>
+                location.replace("http://localhost/Pdf2Html/public/index.php")
+            </script>
+            <?php
+        }
         ?>
     </div>
     <script type="text/javascript" src="http://localhost/Pdf2Html/private/nav/nav.js"></script>

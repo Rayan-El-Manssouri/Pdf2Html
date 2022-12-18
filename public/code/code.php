@@ -50,7 +50,6 @@ $manager = new FileManager();
                 <input type="submit" value="Supprimmer" name="supp"></input>
                 <input type="hidden" id="cacher_<?=$i?>" name="test" value="<?=$i?>">
               </form>
-              
             </div>
         <?php endforeach ?>
             <?php 
@@ -67,6 +66,5 @@ $manager = new FileManager();
                   header("Location: code.php");
                 }
              ?>
-      
 </body>
 </html>
