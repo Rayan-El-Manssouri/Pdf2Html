@@ -37,7 +37,7 @@ $manager = new FileManager();
               $i = $Pdf2HtmlQueryManager_Image_V2['Id']; 
             ?>
             <div class="image" id="<?= $Pdf2HtmlQueryManager_Image_V2['Id']?>" >
-                <img src="../<?= $Pdf2HtmlQueryManager_Image_V2['src']?>" style="z-index: 1; position: absolute;"    class="img ball_<?=$i?>"   width="80" height="80"   >
+                <img src="../<?= $Pdf2HtmlQueryManager_Image_V2['src']?>" id="img_<?=$i?>" style="z-index: 1; position: absolute;"    class="img ball_<?=$i?>"   width="80" height="80"   >
                 <?php 
                   // Création d'un répertoire javascript qui va sctocker tous le code des images / text indépedent.
                   mkdir("javascript");
@@ -46,11 +46,11 @@ $manager = new FileManager();
                 ?>
             </div>
             <div class="menu_click_droit" id="menu_click_droit_id_<?=$i?>">
-            <form method="POST">
-              <input type="submit" value="Supprimmer" name="supp"></input>
-              <input type="hidden" id="cacher_<?=$i?>" name="test" value="<?=$i?>">
-
-            </form>
+              <form method="POST">
+                <input type="submit" value="Supprimmer" name="supp"></input>
+                <input type="hidden" id="cacher_<?=$i?>" name="test" value="<?=$i?>">
+              </form>
+              
             </div>
         <?php endforeach ?>
             <?php 

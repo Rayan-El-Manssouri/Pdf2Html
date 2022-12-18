@@ -308,10 +308,37 @@ input[type="file"]{
 }
 
 .formulaire_generate{
+    display: none;
     position: absolute;
-    z-index: 10000;
-    left: 100px;
+    z-index: 1000;
 }
+
+/* Menu clickdroit image */
+.clickdroit_2{
+    background-color: #000;
+    position: absolute;
+    left: -80px;
+    top: -140px;
+    padding: 0;
+    width: 220px;
+    height: 256px;
+}
+
+.clickdroit_2 input{
+    width: 100%;
+    text-align: left;
+    background-color: transparent;
+    color: #fff;
+}
+
+
+.clickdroit_2 input:hover{
+    width: 100%;
+    text-align: left;
+    background-color: #fff;
+    color: #333;
+}
+
 
 
 /* Responsive */

@@ -38,10 +38,34 @@ $data5 = $database->read($query4);
         <div class="scrollbar">
             <div class="Image_grid">
                 <?php foreach($data5 as $dataV2): ?>
-                    <img class="image image_grid" src="<?=$dataV2['src']?>" onclick="generate_<?=$dataV2['Id']?>()" >
-                    <form method="POST" class="formulaire_generate">
-                        <input type="submit" name="generate"   id="generation_<?=$dataV2['Id']?>" >
+                    <?php 
+                       $i = $dataV2['Id']; 
+
+                    ?>
+                    <img class="image image_grid" id="img_2_<?=$i?>" src="<?=$dataV2['src']?>"  >
+                    <form method="POST" class="formulaire_generate"  id="clickdroit_2_<?=$i?>">
+                        <div class="clickdroit_2">
+                            <input type="submit" value="Importer" name="generate"   id="generation_<?=$dataV2['Id']?>" >
+                            <input type="submit" value="Suprimmer" name="generate">
+
+                        </div>
                     </form>
+                    <script type="text/javascript">
+                            const img_<?=$i?> = document.getElementById("img_2_<?=$i?>")
+                            img_<?=$i?>.addEventListener("contextmenu", (e)=>{
+                                const clickdroit_<?=$i?> = document.getElementById("clickdroit_2_<?=$i?>");
+                                clickdroit_<?=$i?>.style.display = 'block';
+                                clickdroit_<?=$i?>.style.top = e.clientY + 'px';
+                                clickdroit_<?=$i?>.style.left = e.clientX + 'px';
+                                e.preventDefault();
+                            })
+                            document.addEventListener("click", ()=>{
+                                const clickdroit_<?=$i?> = document.getElementById("clickdroit_2_<?=$i?>");
+
+                                clickdroit_<?=$i?>.style.display = 'none';
+
+                            })
+                        </script>
                 <?php endforeach; ?>
              
                 <?php 
