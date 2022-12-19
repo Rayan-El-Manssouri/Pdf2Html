@@ -23,6 +23,8 @@
     --Zindex-4: 4;
     --Zindex-5: 5;
     --Zindex-6: 6;
+    /* Width du header */
+    --Widht-Header: 340px;
 }
 
 
@@ -223,7 +225,7 @@ nav ul li p{
     top: 0;
     background-color: var(--Color-blanc);
     padding: 10px;
-    width: 340px;
+    width: var(--Widht-Header);
     opacity: 0;
     transition: all .2s ease;
     display: flex;   
@@ -337,6 +339,46 @@ input[type="file"]{
     text-align: left;
     background-color: #fff;
     color: #333;
+}
+
+/* Generation de text */
+.generation_text{
+    position: fixed;
+    left: 70px;
+    background-color: #fff;
+    width: var(--Widht-Header);
+    height: 100%;
+    z-index: var(--Zindex-6);
+}
+
+.generation_text button{
+    width: 300px;
+    cursor: pointer;
+    text-align: left;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: transparent;
+    margin: 10px;
+    transition: all 0.35s ease;
+}
+
+.generation_text button:hover{
+    cursor: pointer;
+    background-color: rgb(98, 97, 97);
+}
+
+.generation_text_2{
+    position: absolute;
+    text-align: center;
+    left: 50px;
+    top: 30px;
+}
+
+.generation_text_V2{
+    position: relative;
+    top: 100px;
+    left: -2px;
 }
 
 

@@ -32,5 +32,14 @@ class Pdf2HtmlQueryManager {
       // Récupération et retour des résultats
       return $stmt->fetchAll();
     }
+      // Fonction pour récupérer tous les images de la base de données
+    public function getAllText() {
+        // Préparation de la requête SQL
+      $stmt = $this->pdo->prepare("SELECT * FROM text");
+      // Exécution de la requête
+              $stmt->execute();
+        // Récupération et retour des résultats
+        return $stmt->fetchAll();
+      }
   }
 ?>

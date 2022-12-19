@@ -63,25 +63,11 @@ $data5 = $database->read($query4);
                             })
                             document.addEventListener("click", ()=>{
                                 const clickdroit_<?=$i?> = document.getElementById("clickdroit_2_<?=$i?>");
-
                                 clickdroit_<?=$i?>.style.display = 'none';
 
                             })
                         </script>
                 <?php endforeach; ?>
-                <?php 
-                    if(isset($_POST['generate'])){
-                        $query7 = "SELECT * FROM `image_stockage` WHERE Id='".$_POST['hidden_id']."' ";
-                        $data7 = $database->read($query7);
-                        $query6 = "INSERT INTO `image`(`src`) VALUES ('".$data7[0]['src']."')";
-                        $data6 = $database->read($query6);
-                        ?>
-                        <script>
-                            location.replace("")
-                        </script>
-                        <?php
-                    }
-                ?>
                    <script type="text/javascript">
                     function generate_<?=$dataV2['Id']?>(){
                         const generation_<?=$dataV2['Id']?> = generation_<?=$dataV2['Id']?>.document.getElementById("generation_<?=$dataV2['Id']?>");
@@ -91,6 +77,17 @@ $data5 = $database->read($query4);
             </div>
         </div>
         <?php 
+            if(isset($_POST['generate'])){
+                $query7 = "SELECT * FROM `image_stockage` WHERE Id='".$_POST['hidden_id']."' ";
+                $data7 = $database->read($query7);
+                $query6 = "INSERT INTO `image`(`src`) VALUES ('".$data7[0]['src']."')";
+                $data6 = $database->read($query6);
+                ?>
+                <script>
+                    location.replace("")
+                </script>
+                <?php
+            }
         if(!empty($_FILES)){
             mkdir("src");
             $file_name = $_FILES['fichier']['name'];
@@ -110,18 +107,15 @@ $data5 = $database->read($query4);
                 <?php
             }
         };
-
         if(!empty($_POST['supprimer'])){
             $query8 = "SELECT * FROM  `image_stockage` WHERE Id='".$_POST['hidden_id']."' ";
             $data8 = $database->read($query8);
-
             $src = $data8[0]['src'];
             unlink($src);
             $query7 = "DELETE FROM `image_stockage` WHERE Id='".$_POST['hidden_id']."' ";
             $data7 = $database->read($query7);
             $query10 = "DELETE FROM `image` WHERE src='".$_POST['hidden_src']."' ";
             $data10 = $database->read($query10);
-
             ?>
             <script>
                 location.replace("http://localhost/Pdf2Html/public/index.php")
@@ -129,6 +123,33 @@ $data5 = $database->read($query4);
             <?php
         }
         ?>
+        
+    </div>
+    <!-- Génération de Text -->
+    <div class="generation_text">
+            <h1 class="generation_text_2">Génération de Text</h1>
+            <div class="generation_text_V2">
+                <form method="POST">
+                    <input type="submit" name="text" value="text">
+                    <?php 
+                    if(isset($_POST['text'])){
+                        $query8 = "INSERT INTO `text`(`Text`) VALUES ('Text')";
+                        $data8 = $database->read($query8);
+                        ?>
+                        <script>
+                            location.replace("")
+                        </script>
+                        <?php
+                    }
+                    ?>
+                </form>
+                <button><h5>Text</h5></button>
+                <button><h4>Text</h4></button>
+                <button><h3>Text</h3></button>
+                <button><h2>Text</h2></button>
+                <button><h1>Text</h1></button>
+            </div>
+
     </div>
     <script type="text/javascript" src="http://localhost/Pdf2Html/private/nav/nav.js"></script>
 </nav>
