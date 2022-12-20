@@ -381,6 +381,18 @@ input[type="file"]{
     left: -2px;
 }
 
+.label_text{
+    border: 1px solid #333;
+    width: 90%;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+
+.label_text:hover{
+    background-color: rgb(99, 99, 99);
+}
 
 
 /* Responsive */

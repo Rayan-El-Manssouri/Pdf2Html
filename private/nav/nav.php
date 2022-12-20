@@ -129,25 +129,88 @@ $data5 = $database->read($query4);
     <div class="generation_text">
             <h1 class="generation_text_2">Génération de Text</h1>
             <div class="generation_text_V2">
-                <form method="POST">
-                    <input type="submit" name="text" value="text">
-                    <?php 
-                    if(isset($_POST['text'])){
-                        $query8 = "INSERT INTO `text`(`Text`) VALUES ('Text')";
-                        $data8 = $database->read($query8);
-                        ?>
-                        <script>
-                            location.replace("")
-                        </script>
-                        <?php
-                    }
-                    ?>
+                <form method="POST"  class="label_text">
+                    <input type="submit" style="display: none;" name="text_h1" value="Text h1" id="h1">
+                    <label for="h1">
+                        <h1>Text</h1>
+                    </label>
                 </form>
-                <button><h5>Text</h5></button>
-                <button><h4>Text</h4></button>
-                <button><h3>Text</h3></button>
-                <button><h2>Text</h2></button>
-                <button><h1>Text</h1></button>
+                <form method="POST" class="label_text">
+                    <input type="submit" style="display: none;" name="text_h2" value="text h2" id="h2">
+                    <label for="h2" >
+                        <h2>Text</h2>
+                    </label>
+                </form>        
+                <form method="POST" class="label_text">
+                    <input type="submit" style="display: none;" name="text_h3" value="text h3" id="h3">
+                    <label for="h3">
+                        <h3>Text</h3>
+                    </label>
+                </form>        
+                <form method="POST" class="label_text">
+                    <input type="submit" style="display: none;" name="text_h4" value="text h4" id="h4">
+                    <label for="h4" >
+                        <h4>Text</h4>
+                    </label>
+                </form>        
+                <form method="POST"  class="label_text">
+                    <input type="submit" style="display: none;" name="text_h5" value="text h5" id="h5">
+                    <label for="h5">
+                        <h5>Text</h5>
+                    </label>
+                </form>
+                <?php 
+                // Text en h1
+                if(isset($_POST['text_h1'])){
+                    $query8 = "INSERT INTO `text`(`Text`) VALUES ('<h1>Text</h1>')";
+                    $data8 = $database->read($query8);
+                    ?>
+                    <script>
+                        location.replace("")
+                    </script>
+                    <?php
+                }
+                // Text en h2
+                if(isset($_POST['text_h2'])){
+                    $query8 = "INSERT INTO `text`(`Text`) VALUES ('<h2>Text</h2>')";
+                    $data8 = $database->read($query8);
+                    ?>
+                    <script>
+                        location.replace("")
+                    </script>
+                    <?php
+                }
+                // Text en h3
+                if(isset($_POST['text_h3'])){
+                    $query8 = "INSERT INTO `text`(`Text`) VALUES ('<h3>Text</h3>')";
+                    $data8 = $database->read($query8);
+                    ?>
+                    <script>
+                        location.replace("")
+                    </script>
+                    <?php
+                }
+                // Text en h4
+                if(isset($_POST['text_h4'])){
+                    $query8 = "INSERT INTO `text`(`Text`) VALUES ('<h4>Text</h4>')";
+                    $data8 = $database->read($query8);
+                    ?>
+                    <script>
+                        location.replace("")
+                    </script>
+                    <?php
+                }
+                // Text en h5
+                if(isset($_POST['text_h5'])){
+                    $query8 = "INSERT INTO `text`(`Text`) VALUES ('<h5>Text</h5>')";
+                    $data8 = $database->read($query8);
+                    ?>
+                    <script>
+                        location.replace("")
+                    </script>
+                    <?php
+                }
+                ?>
             </div>
 
     </div>

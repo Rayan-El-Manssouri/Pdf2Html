@@ -78,7 +78,10 @@ $manager = new FileManager();
              
              ?>
              <?php  foreach($Pdf2HtmlQueryManager_Text as $Pdf2HtmlQueryManager_Text_V2): ?>
-              <p id="text_<?=$Pdf2HtmlQueryManager_Text_V2['Id']?>" style="position: absolute; cursor: move;"><?= $Pdf2HtmlQueryManager_Text_V2['Text'] ?></p>
+              <div id="text_<?=$Pdf2HtmlQueryManager_Text_V2['Id']?>" style="position: absolute; cursor: move;">
+                <?= $Pdf2HtmlQueryManager_Text_V2['Text'] ?></p>
+              </div>
+           
               <?php 
               mkdir("text");
               $i_text = $Pdf2HtmlQueryManager_Text_V2['Id'];
