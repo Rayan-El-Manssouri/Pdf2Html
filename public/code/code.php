@@ -78,22 +78,34 @@ $manager = new FileManager();
              
              ?>
              <?php  foreach($Pdf2HtmlQueryManager_Text as $Pdf2HtmlQueryManager_Text_V2): ?>
-              <p id="<?=$Pdf2HtmlQueryManager_Text_V2['Id']?>" style="position: absolute; cursor: move;"><?= $Pdf2HtmlQueryManager_Text_V2['Text'] ?></p>
+              <p id="text_<?=$Pdf2HtmlQueryManager_Text_V2['Id']?>" style="position: absolute; cursor: move;"><?= $Pdf2HtmlQueryManager_Text_V2['Text'] ?></p>
               <?php 
               mkdir("text");
               $i_text = $Pdf2HtmlQueryManager_Text_V2['Id'];
               file_put_contents('text/text_'.$i_text.'.js', '
-              var oWdgCursor = function (sElement, sLimite) {
+              var Id_Text_'.$i_text.' = document.getElementById("text_'.$i_text.'");
+              Id_Text_'.$i_text.'.style.left = localStorage.getItem("Left_'.$i_text.'");
+              Id_Text_'.$i_text.'.style.top = localStorage.getItem("Top_'.$i_text.'");
+
+              var oWdgCursor_'.$i_text.' = function (sElement, sLimite) {
+                var Id_Text_'.$i_text.' = document.getElementById("text_'.$i_text.'");
+
                 this.oLimite = null;
-                this.oElement = null;
+                
+                this.oElement_'.$i_text.' = null;
+                
                 this.oLimite = document.getElementById(sLimite);
                 this.bDrag = false;
+                
                 this.bError = false;
+                
                 this.sClassDrag = "oWdgCursorDrag";
+                
                 this.oPos = {x:0,y:0};
+                
                 this.moveDiv = this.moveDiv.bind(this); 
+               
                 this.getBoundingLimite = function(){
-
                   if(this.oLimite == document.documentElement){
                     return  {width:window.innerWidth, 
                              height:window.innerHeight,
@@ -107,30 +119,32 @@ $manager = new FileManager();
                 * Initialise les evenements
                 */
                 this.init = function (sLimite, sElement) {  
-                  this.oElement = document.getElementById(sElement); 
+                  this.oElement_'.$i_text.' = document.getElementById(sElement); 
                   this.oLimite =(sLimite === undefined)? document.documentElement:document.getElementById(sLimite);
-                  if(this.oElement == null || this.oLimite == null){
+                  if(this.oElement_'.$i_text.' == null || this.oLimite == null){
                     return true;
                   }//if
-                  this.oElement.addEventListener("mousedown", this.moveDiv);
-                  this.oElement.addEventListener("touchstart", this.moveDiv);
+                  this.oElement_'.$i_text.'.addEventListener("mousedown", this.moveDiv);
+                  this.oElement_'.$i_text.'.addEventListener("touchstart", this.moveDiv);
                   return false;
                 }//fct 
               
                 this.bError = this.init(sLimite, sElement);
               }//fct
               
-              oWdgCursor.prototype.moveDiv  = function (oEvent){
+              oWdgCursor_'.$i_text.'.prototype.moveDiv  = function (oEvent){
                 oEvent.preventDefault();
                 if(oEvent.type=="touchstart" || oEvent.type=="mousedown"){
                   this.bDrag = true;
                   var oTouch = oEvent,
-                      oRect = this.oElement.getBoundingClientRect();
+                      oRect = this.oElement_'.$i_text.'.getBoundingClientRect();
                   if(oEvent.type=="touchstart"){
                     oTouch = null;
+                    
                     if (oEvent.targetTouches.length > 0 ) {
                       for(var i = 0; i < oEvent.targetTouches.length ; i++){
-                        if(oEvent.targetTouches[i].target == this.oElement){
+
+                        if(oEvent.targetTouches[i].target == this.oElement_'.$i_text.'){
                           oTouch = oEvent.targetTouches[i];7
                           break;
                         }//if
@@ -140,20 +154,21 @@ $manager = new FileManager();
                   } //if
                   this.oPos = {"left":(oTouch.clientX - oRect.left),"top": (oTouch.clientY - oRect.top)};
                   document.addEventListener("mouseup", this.moveDiv) ;
-                  this.oElement.addEventListener("mouseup", this.moveDiv) ;
+                  this.oElement_'.$i_text.'.addEventListener("mouseup", this.moveDiv) ;
                   document.addEventListener("touchend", this.moveDiv) ; 
               
                   document.addEventListener("mousemove", this.moveDiv) ; 
                   document.addEventListener("touchmove", this.moveDiv) ; 
                 }else if(oEvent.type=="touchend" || oEvent.type=="mouseup"){
                   this.bDrag = false;
-                  this.oElement.classList.remove(this.sClassDrag)
+                  this.oElement_'.$i_text.'.classList.remove(this.sClassDrag)
                   document.removeEventListener("mousemove", this.moveDiv) ;
                   document.removeEventListener("touchmove", this.moveDiv) ;
                   document.removeEventListener("mouseup", this.moveDiv) ;
                   document.removeEventListener("touchend", this.moveDiv) ; 
-                  this.oElement.removeEventListener("mouseup", this.moveDiv) ;
-
+                  this.oElement_'.$i_text.'.removeEventListener("mouseup", this.moveDiv) ;
+                  localStorage.setItem("Left_'.$i_text.'", this.oElement_'.$i_text.'.style.left);
+                  localStorage.setItem("Top_'.$i_text.'", this.oElement_'.$i_text.'.style.top);
 
                 }else if(oEvent.type=="touchmove" || oEvent.type=="mousemove"){
                   var oTouch = oEvent;
@@ -163,8 +178,9 @@ $manager = new FileManager();
                     oTouch = null;
                     if (oEvent.targetTouches.length > 0 ) {
                       for(var i = 0; i < oEvent.targetTouches.length ; i++){
-                        if(oEvent.targetTouches[i].target == this.oElement){
+                        if(oEvent.targetTouches[i].target == this.oElement_'.$i_text.'){
                           oTouch = oEvent.targetTouches[i];
+
                           break;
                         }//if
                       }//for
@@ -172,12 +188,13 @@ $manager = new FileManager();
                     if(oTouch==null){return}
                   }//if
                   if(this.bDrag == true){ 
-                    this.oElement.classList.add(this.sClassDrag)
+                    this.oElement_'.$i_text.'.classList.add(this.sClassDrag)
                     var oRect = this.getBoundingLimite(),
-                        iWidth= this.oElement.offsetWidth,
-                        iHeight = this.oElement.offsetHeight, 
+                        iWidth= this.oElement_'.$i_text.'.offsetWidth,
+                        iHeight = this.oElement_'.$i_text.'.offsetHeight, 
                         iClientX = oTouch.clientX - oRect.left - this.oPos.left,
                         iClientY = oTouch.clientY- oRect.top - this.oPos.top 
+
                     ;
                     if(iClientX < 0 ){
                       iClientX = 0;
@@ -189,18 +206,17 @@ $manager = new FileManager();
                     }else if(iClientY + iHeight > oRect.height){
                       iClientY = oRect.height - iHeight ;
                     } 
-                    this.oElement.style.left = iClientX+"px";
-                    this.oElement.style.top  = iClientY+"px";
-
-                  }//if
+                    this.oElement_'.$i_text.'.style.left = iClientX+"px";
+                    this.oElement_'.$i_text.'.style.top  = iClientY+"px";
+                    }//if
                   else{
-                    this.oElement.classList.remove(this.sClassDrag)
+                    this.oElement_'.$i_text.'.classList.remove(this.sClassDrag)
                   }
                 }//else if
               }//fct 
               
               document.addEventListener("DOMContentLoaded",function(){
-                var oZone2 = new oWdgCursor("'.$i_text.'"); 
+                var oZone2_'.$i_text.' = new oWdgCursor_'.$i_text.'("text_'.$i_text.'"); 
               });');
               echo "<script type='text/javascript' src='text/text_$i_text.js'></script>";
               ?>
