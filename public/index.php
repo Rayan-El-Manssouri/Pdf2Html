@@ -1,14 +1,3 @@
-<?php 
-/*//////////////////////////////
-// 
-// Createur : https://github.com/Rayan-El-Manssouri
-// Création du projet : 19/11/2022 12:41
-//
-*////////////////////////////////
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
